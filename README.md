@@ -5,7 +5,7 @@
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Latest-blue)](https://github.com/anthropics/claude-code)
 [![cc-switch](https://img.shields.io/badge/cc--switch-Latest-orange)](https://github.com/farion1231/cc-switch)
 
-> One-click auto-install Claude Code + cc switch | Auto-detects Node.js, Claude Code, cc switch | Zero config AI prompt
+> One-click auto-install Claude Code + cc switch | Auto-detects Node.js, Claude Code, CC Switch | Zero config AI prompt
 
 [English](#english) | [中文](#中文)
 
