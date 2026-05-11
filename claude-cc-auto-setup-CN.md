@@ -13,6 +13,12 @@
 ### 步骤 1：检测 Node.js
 - 运行 `node --version` 检测是否已安装
 - 如果未安装，自动搜索下载最新 LTS 版本并安装
+- **自动配置环境变量**：
+  - 检测 Node.js 安装路径（默认：`C:\Program Files\nodejs\`）
+  - 检查该路径是否已添加到系统 PATH 环境变量
+  - 如果未添加，使用 PowerShell 管理员权限自动添加到系统环境变量
+  - 运行 `refreshenv` 或重启终端使环境变量生效
+  - 验证 `node` 和 `npm` 命令是否可用
 
 ### 步骤 2：安装 Claude Code
 - 执行 `npm install -g @anthropic-ai/claude-code`
@@ -34,12 +40,16 @@
 | 步骤 | 状态 | 详情 |
 |------|------|------|
 | Node.js 检测 | ✅ | vXX.XX.X |
+| Node.js 环境变量配置 | ✅ | 已添加到 PATH |
 | Claude Code 安装 | ✅ | vX.X.X |
 | cc switch 下载并启动 | ✅ | 正在运行 (PID: XXXXX) |
 
 ### 📝 使用说明
 1. **Claude Code**：终端运行 `claude`
 2. **cc switch**：系统托盘图标打开界面，配置 API Key 和管理供应商
+
+### 💡 可选操作
+- **移动 cc-switch**：如需整理文件，可将 `./cc-switch/` 文件夹移动到其他位置（如 `C:\Program Files\cc-switch\`），移动后重新运行 `cc-switch.exe` 即可
 ```
 
 ## 注意事项
