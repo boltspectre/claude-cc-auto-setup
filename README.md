@@ -21,7 +21,7 @@
 
 | 功能                      | 描述                          |
 | ----------------------- | --------------------------- |
-| 🔍 **自动检测 Node.js**     | 检测系统是否已安装 Node.js，如未安装可自动下载 |
+| 🔍 **自动检测 Node.js**     | 检测系统是否已安装 Node.js，如未安装则自动下载安装，并配置环境 |
 | 📦 **自动安装 Claude Code** | 通过 npm 全局安装最新版 Claude Code  |
 | 🔄 **自动下载 cc-switch**   | 从 GitHub Releases 自动获取最新版本  |
 | 🚀 **自动启动**             | 解压并启动 cc-switch，无需手动操作      |
@@ -31,7 +31,8 @@
 
 #### 方式一：使用 AI 智能体执行（推荐）
 
-将 [claude-cc-auto-setup.md](./claude-cc-auto-setup.md) 的内容发送给 AI 智能体，AI 将**全自动完成**所有配置步骤。
+将 [claude-cc-auto-setup.md](./claude-cc-auto-setup.md) 的内容发送给 AI 智能体，AI 将**全自动完成**所有配置步骤，启动前建议给ai智能体赋予自动执行命令权限。
+
 
 **例如（包括但不限于）：**
 
