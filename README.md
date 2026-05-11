@@ -11,151 +11,6 @@
 
 ***
 
-## 中文
-
-### 🎯 项目简介
-
-本项目提供**一键自动化环境配置**，帮助用户快速搭建 Claude Code 开发环境，无需手动配置任何参数。
-
-### ✨ 功能特性
-
-| 功能                      | 描述                          |
-| ----------------------- | --------------------------- |
-| 🔍 **自动检测 Node.js**     | 检测系统是否已安装 Node.js，如未安装则自动下载安装，并配置环境 |
-| 📦 **自动安装 Claude Code** | 通过 npm 全局安装最新版 Claude Code  |
-| 🔄 **自动下载 cc-switch**   | 从 GitHub Releases 自动获取最新版本  |
-| 🚀 **自动启动**             | 解压并启动 cc-switch，无需手动操作      |
-| ⚙️ **零配置**              | 所有下载地址自动搜索获取，用户无需配置任何参数     |
-
-### 🚀 快速开始
-
-#### 方式一：使用 AI 智能体执行（推荐）
-
-将 [claude-cc-auto-setup.md](./claude-cc-auto-setup.md) 的内容发送给 AI 智能体，AI 将**全自动完成**所有配置步骤，启动前建议给ai智能体赋予自动执行命令权限。
-
-
-**例如（包括但不限于）：**
-
-| 类型 | 工具名称 |
-|------|----------|
-| **IDE 内置 AI** | Cursor、Trae、Windsurf、Qoder、Kiro、CodeBuddy |
-| **IDE 插件** | GitHub Copilot、Cline、通义灵码、Kilo Code |
-
-> 💡 **使用方法**：打开任意 AI 智能体，将 `claude-cc-auto-setup.md` 文件内容粘贴到 AI 对话框，AI 会自动执行安装流程。
-
-#### 方式二：手动执行
-
-```bash
-# 1. 检测 Node.js
-node --version
-
-# 2. 安装 Claude Code
-npm install -g @anthropic-ai/claude-code
-
-# 3. 下载 cc-switch（Windows 便携版）
-curl -L -o cc-switch.zip https://github.com/farion1231/cc-switch/releases/latest/download/CC-Switch-Windows-Portable.zip
-
-# 4. 解压并运行
-Expand-Archive -Path cc-switch.zip -DestinationPath cc-switch
-.\cc-switch\cc-switch.exe
-```
-
-### 📋 环境要求
-
-| 组件      | 最低版本       | 说明               |
-| ------- | ---------- | ---------------- |
-| Windows | Windows 10 | x64 架构           |
-| Node.js | 18.x LTS   | 用于运行 Claude Code |
-| 网络连接    | 科学上网          | 用于下载依赖           |
-
-> 🌐 **国内用户注意**：安装过程需要从 GitHub 和 npm 下载资源，请确保网络环境可以正常访问上述网站。如有必要，请提前配置好科学上网工具。
-
-### 📁 项目结构
-
-```
-.
-├── claude-cc-auto-setup.md    # AI 提示词文档（自动化配置脚本）
-├── cc-switch/               # cc-switch 安装目录（自动生成）
-│   ├── cc-switch.exe       # 主程序
-│   └── portable.ini        # 便携版配置文件
-└── README.md               # 本文件
-```
-
-### 🎮 使用说明
-
-#### Claude Code
-
-```bash
-# 启动 Claude Code
-claude
-
-# 查看版本
-claude --version
-```
-
-#### cc-switch
-
-1. 查看系统托盘，找到 cc-switch 图标
-2. 点击图标打开配置界面
-3. 添加 API Key 和配置供应商
-4. 一键切换不同 AI 供应商
-
-### 🔧 支持的供应商
-
-cc-switch 支持管理以下 AI 工具的供应商配置：
-
-- **Claude Code** - Anthropic Claude
-- **Codex** - OpenAI Codex
-- **Gemini CLI** - Google Gemini
-- **OpenCode** - 开源 AI 代码助手
-
-### 📊 执行流程
-
-```
-┌─────────────────┐
-│  检测 Node.js   │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ 安装 Claude Code│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ 下载 cc-switch  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ 启动 cc-switch  │
-└─────────────────┘
-```
-
-### ❓ 常见问题
-
-#### Q: 安装过程中出现权限错误？
-
-A: 请以管理员身份运行 PowerShell 或终端。
-
-#### Q: 如何更新 cc-switch？
-
-A: 删除 `cc-switch` 目录，重新运行配置流程即可自动下载最新版本。
-
-#### Q: 如何配置 API Key？
-
-A: 启动 cc-switch 后，在系统托盘图标右键打开界面，添加供应商配置即可。
-
-### 🤝 贡献指南
-
-欢迎提交 Issue 和 Pull Request！
-
-### 📄 许可证
-
-本项目采用 [MIT License](LICENSE) 开源许可证。
-
-***
-
 ## English
 
 ### 🎯 Introduction
@@ -175,6 +30,8 @@ This project provides **one-click automated environment setup** to help users qu
 ### 🚀 Quick Start
 
 #### Option 1: Use AI Agent (Recommended)
+
+> ⚠️ **Important**: Before sending the prompt to AI, make sure to grant your AI agent permission to execute commands automatically.
 
 Send the content of [claude-cc-auto-setup.md](./claude-cc-auto-setup.md) to your AI agent, and it will **automatically complete** all configuration steps.
 
@@ -244,6 +101,25 @@ claude --version
 3. Add API Key and configure providers
 4. Switch between AI providers with one click
 
+#### Post-Installation Setup
+
+**Configure Third-Party API Keys:**
+1. Open cc-switch from system tray
+2. Select the AI tool you want to configure (e.g., Claude Code)
+3. Click "Add Provider" and enter your API Key
+4. Supported providers: Anthropic, OpenAI, Google, etc.
+5. Save the configuration
+
+**Install VS Code Extension:**
+1. Open VS Code
+2. Go to Extensions marketplace (Ctrl+Shift+X)
+3. Search for "Claude Code" or "Claude Code for VS Code"
+4. Click Install
+5. The extension will automatically connect to your Claude Code installation
+6. You can now use Claude Code directly within VS Code
+
+> 💡 **Tip**: With cc-switch, you can easily switch between different AI providers without manually editing configuration files.
+
 ### 🔧 Supported Providers
 
 cc-switch supports managing provider configurations for:
@@ -297,6 +173,171 @@ Issues and Pull Requests are welcome!
 ### 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
+
+***
+
+## 中文
+
+### 🎯 项目简介
+
+本项目提供**一键自动化环境配置**，帮助用户快速搭建 Claude Code 开发环境，无需手动配置任何参数。
+
+### ✨ 功能特性
+
+| 功能                      | 描述                          |
+| ----------------------- | --------------------------- |
+| 🔍 **自动检测 Node.js**     | 检测系统是否已安装 Node.js，如未安装则自动下载安装，并配置环境 |
+| 📦 **自动安装 Claude Code** | 通过 npm 全局安装最新版 Claude Code  |
+| 🔄 **自动下载 cc-switch**   | 从 GitHub Releases 自动获取最新版本  |
+| 🚀 **自动启动**             | 解压并启动 cc-switch，无需手动操作      |
+| ⚙️ **零配置**              | 所有下载地址自动搜索获取，用户无需配置任何参数     |
+
+### 🚀 快速开始
+
+#### 方式一：使用 AI 智能体执行（推荐）
+
+> ⚠️ **重要提示**：在将提示词发送给 AI 之前，建议给 AI 智能体赋予自动执行命令权限。
+
+将 [claude-cc-auto-setup.md](./claude-cc-auto-setup.md) 的内容发送给 AI 智能体，AI 将**全自动完成**所有配置步骤。
+
+**例如（包括但不限于）：**
+
+| 类型 | 工具名称 |
+|------|----------|
+| **IDE 内置 AI** | Cursor、Trae、Windsurf、Qoder、Kiro、CodeBuddy |
+| **IDE 插件** | GitHub Copilot、Cline、通义灵码、Kilo Code |
+
+> 💡 **使用方法**：打开任意 AI 智能体，将 `claude-cc-auto-setup.md` 文件内容粘贴到 AI 对话框，AI 会自动执行安装流程。
+
+#### 方式二：手动执行
+
+```bash
+# 1. 检测 Node.js
+node --version
+
+# 2. 安装 Claude Code
+npm install -g @anthropic-ai/claude-code
+
+# 3. 下载 cc-switch（Windows 便携版）
+curl -L -o cc-switch.zip https://github.com/farion1231/cc-switch/releases/latest/download/CC-Switch-Windows-Portable.zip
+
+# 4. 解压并运行
+Expand-Archive -Path cc-switch.zip -DestinationPath cc-switch
+.\cc-switch\cc-switch.exe
+```
+
+### 📋 环境要求
+
+| 组件      | 最低版本       | 说明               |
+| ------- | ---------- | ---------------- |
+| Windows | Windows 10 | x64 架构           |
+| Node.js | 18.x LTS   | 用于运行 Claude Code |
+| 网络连接    | 科学上网          | 用于下载依赖           |
+
+> 🌐 **国内用户注意**：安装过程需要从 GitHub 和 npm 下载资源，请确保网络环境可以正常访问上述网站。如有必要，请提前配置好科学上网工具。
+
+### 📁 项目结构
+
+```
+.
+├── claude-cc-auto-setup.md    # AI 提示词文档（自动化配置脚本）
+├── cc-switch/               # cc-switch 安装目录（自动生成）
+│   ├── cc-switch.exe       # 主程序
+│   └── portable.ini        # 便携版配置文件
+└── README.md               # 本文件
+```
+
+### 🎮 使用说明
+
+#### Claude Code
+
+```bash
+# 启动 Claude Code
+claude
+
+# 查看版本
+claude --version
+```
+
+#### cc-switch
+
+1. 查看系统托盘，找到 cc-switch 图标
+2. 点击图标打开配置界面
+3. 添加 API Key 和配置供应商
+4. 一键切换不同 AI 供应商
+
+#### 安装后配置
+
+**配置第三方 API 密钥：**
+1. 从系统托盘打开 cc-switch
+2. 选择要配置的 AI 工具（如 Claude Code）
+3. 点击「添加供应商」并输入你的 API Key
+4. 支持供应商：Anthropic、OpenAI、Google 等
+5. 保存配置
+
+**安装 VS Code 插件：**
+1. 打开 VS Code
+2. 进入扩展市场（Ctrl+Shift+X）
+3. 搜索「Claude Code」或「Claude Code for VS Code」
+4. 点击安装
+5. 插件会自动连接到你的 Claude Code 安装
+6. 现在可以直接在 VS Code 中使用 Claude Code
+
+> 💡 **提示**：使用 cc-switch，你可以轻松在不同 AI 供应商之间切换，无需手动编辑配置文件。
+
+### 🔧 支持的供应商
+
+cc-switch 支持管理以下 AI 工具的供应商配置：
+
+- **Claude Code** - Anthropic Claude
+- **Codex** - OpenAI Codex
+- **Gemini CLI** - Google Gemini
+- **OpenCode** - 开源 AI 代码助手
+
+### 📊 执行流程
+
+```
+┌─────────────────┐
+│  检测 Node.js   │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ 安装 Claude Code│
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ 下载 cc-switch  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ 启动 cc-switch  │
+└─────────────────┘
+```
+
+### ❓ 常见问题
+
+#### Q: 安装过程中出现权限错误？
+
+A: 请以管理员身份运行 PowerShell 或终端。
+
+#### Q: 如何更新 cc-switch？
+
+A: 删除 `cc-switch` 目录，重新运行配置流程即可自动下载最新版本。
+
+#### Q: 如何配置 API Key？
+
+A: 启动 cc-switch 后，在系统托盘图标右键打开界面，添加供应商配置即可。
+
+### 🤝 贡献指南
+
+欢迎提交 Issue 和 Pull Request！
+
+### 📄 许可证
+
+本项目采用 [MIT License](LICENSE) 开源许可证。
 
 ***
 
