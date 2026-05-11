@@ -1,7 +1,3 @@
-Here's the English version of the prompt:
-
----
-
 # AI Prompt: Automated Environment Setup (Node.js, Claude Code, cc switch)
 
 ## Goal
@@ -20,6 +16,12 @@ Here's the English version of the prompt:
 
 - Run `node --version` to check if already installed
 - If not installed, automatically search for and download the latest LTS version, then install it
+- **Automatically configure environment variables**:
+  - Detect Node.js installation path (default: `C:\Program Files\nodejs\`)
+  - Check if this path has been added to the system PATH environment variable
+  - If not added, use PowerShell administrator privileges to automatically add it to the system environment variables
+  - Run `refreshenv` or restart the terminal to make environment variables take effect
+  - Verify that `node` and `npm` commands are available
 
 ### Step 2: Install Claude Code
 
@@ -44,12 +46,16 @@ Here's the English version of the prompt:
 | Step | Status | Details |
 |------|--------|---------|
 | Node.js Detection | ✅ | vXX.XX.X |
+| Node.js Environment Variables | ✅ | Added to PATH |
 | Claude Code Installation | ✅ | vX.X.X |
 | cc switch Download & Start | ✅ | Running (PID: XXXXX) |
 
 ### 📝 Usage Instructions
 1. **Claude Code**: Run `claude` in terminal
 2. **cc switch**: Open interface from system tray icon, configure API keys and manage vendors
+
+### 💡 Optional Actions
+- **Move cc-switch**: If you want to organize files, move the `./cc-switch/` folder to another location (e.g., `C:\Program Files\cc-switch\`), then re-run `cc-switch.exe`
 ```
 
 ## Notes
